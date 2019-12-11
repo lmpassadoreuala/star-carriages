@@ -1,3 +1,7 @@
 <resources>
+
     <string name="app_name">Star Carriages</string>
+
+    <string name="starships_loading">Cargando…</string>
+
 </resources>

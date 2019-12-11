@@ -1,7 +1,8 @@
-package com.lmpassadore.starcarriages
+package com.lmpassadore.starcarriages.ui.starships
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.lmpassadore.starcarriages.R
 
 class StarshipsActivity : AppCompatActivity() {
 

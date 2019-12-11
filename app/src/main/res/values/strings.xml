@@ -3,5 +3,6 @@
     <string name="app_name">Star Carriages</string>
 
     <string name="starships_loading">Cargando…</string>
+    <string name="oops_error">¡Ups! Ocurrió un error</string>
 
 </resources>

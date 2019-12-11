@@ -20,8 +20,6 @@ data class StarshipResponse(
     @SerializedName("MGLT")
     val mgltSpeed: String,
     @SerializedName("cargo_capacity")
-    val capacity: String,
-    @SerializedName("url")
-    val imageUrl: String
+    val capacity: String
 
 )

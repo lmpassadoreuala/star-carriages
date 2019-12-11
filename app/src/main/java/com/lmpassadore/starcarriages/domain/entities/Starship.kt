@@ -22,7 +22,7 @@ class Starship(
         starshipResponse.model,
         starshipResponse.starshipClass,
         starshipResponse.manufacturer,
-        starshipResponse.lenghtInMeters,
+        starshipResponse.lengthInMeters,
         starshipResponse.crewSize,
         starshipResponse.passengersCapacity,
         starshipResponse.mgltSpeed,

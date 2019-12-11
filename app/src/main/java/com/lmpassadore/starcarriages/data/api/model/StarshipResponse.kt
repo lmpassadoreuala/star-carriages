@@ -11,8 +11,8 @@ data class StarshipResponse(
     val starshipClass: String,
     @SerializedName("manufacturer")
     val manufacturer: String,
-    @SerializedName("lenght")
-    val lenghtInMeters: String,
+    @SerializedName("length")
+    val lengthInMeters: String,
     @SerializedName("crew")
     val crewSize: String,
     @SerializedName("passengers")

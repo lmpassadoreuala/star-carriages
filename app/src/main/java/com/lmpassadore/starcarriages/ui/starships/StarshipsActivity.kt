@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lmpassadore.starcarriages.R
 import com.lmpassadore.starcarriages.data.api.RetrofitApiClient
@@ -42,33 +43,45 @@ class StarshipsActivity : AppCompatActivity() {
 
         starshipsClient.getStarships().enqueue(object : Callback<StarshipsResponse> {
 
-            override fun onResponse(call: Call<StarshipsResponse>, response: Response<StarshipsResponse>) {
+            override fun onResponse(
+                call: Call<StarshipsResponse>,
+                response: Response<StarshipsResponse>
+            ) {
 
                 progressBar.visibility = View.GONE
 
-                if (response.isSuccessful)
-                    setStarshipList(response.body()?.starships?.map { Starship(it) })
-                else
-                    Toast.makeText(this@StarshipsActivity, R.string.oops_error, Toast.LENGTH_SHORT).show()
+                if (response.isSuccessful) {
+                    val starships = response.body()?.starships?.map { Starship(it) }
+                    showStarshipList(starships)
+                } else
+                    Toast.makeText(
+                        this@StarshipsActivity,
+                        R.string.oops_error,
+                        Toast.LENGTH_SHORT
+                    ).show()
 
             }
 
             override fun onFailure(call: Call<StarshipsResponse>, t: Throwable) {
                 progressBar.visibility = View.GONE
-                Toast.makeText(this@StarshipsActivity, R.string.oops_error, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@StarshipsActivity, R.string.oops_error, Toast.LENGTH_SHORT)
+                    .show()
             }
 
         })
 
     }
 
-    private fun setStarshipList(starships: List<Starship>?) {
+    private fun showStarshipList(starships: List<Starship>?) {
 
         if (starships.isNullOrEmpty())
             return
 
         val list: RecyclerView = findViewById(R.id.starships_list)
         list.visibility = View.VISIBLE
+
+        list.layoutManager = LinearLayoutManager(this)
+        list.adapter = StarshipAdapter(starships)
 
     }
 

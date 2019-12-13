@@ -22,7 +22,7 @@ import retrofit2.Response
 class StarshipsActivity : AppCompatActivity() {
 
     companion object {
-        private const val BASE_URL = "https://swapi.co"
+        private const val BASE_URL = "https://swapi.co/api"
     }
 
     private val starshipsClient: StarshipsApi =

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface StarshipsApi {
 
-    @GET("api/starships/")
+    @GET("starships/")
     fun getStarships(): Call<StarshipsResponse>
 
 }

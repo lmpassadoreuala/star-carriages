@@ -101,7 +101,7 @@ class StarshipsActivity : AppCompatActivity() {
 
     private fun showError() {
 
-        Toast.makeText(this@StarshipsActivity, R.string.oops_error, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@StarshipsActivity, R.string.starships_error, Toast.LENGTH_SHORT).show()
 
         starshipsList.visibility = View.GONE
         progressBar.visibility = View.GONE

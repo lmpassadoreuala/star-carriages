@@ -4,6 +4,16 @@
 
     <string name="starships_loading">Cargando…</string>
     <string name="starships_retry">Reintentar</string>
-    <string name="oops_error">¡Ups! Ocurrió un error</string>
+    <string name="starships_error">¡Ups! Ocurrió un error</string>
+
+    <string name="detail_name">Nombre</string>
+    <string name="detail_model">Model</string>
+    <string name="detail_class">Class</string>
+    <string name="detail_manufacturer">Manufacturer</string>
+    <string name="detail_speed">Speed (MGLT)</string>
+    <string name="detail_length">Length (Meters)</string>
+    <string name="detail_crew">Crew size</string>
+    <string name="detail_passengers">Passenger capacity</string>
+    <string name="detail_cargo">Cargo capacity (Kilograms)</string>
 
 </resources>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/starship_detail_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/starship_detail_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_name_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_name_label"
+            tools:text="EF76 Nebulon-B escort frigate" />
+
+        <TextView
+            android:id="@+id/starship_detail_model_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail_model"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starship_detail_name_label" />
+
+        <TextView
+            android:id="@+id/starship_detail_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_model_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_model_label"
+            tools:text="EF76 Nebulon-B escort frigae" />
+
+        <TextView
+            android:id="@+id/starship_detail_class_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail_class"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starship_detail_model_label" />
+
+        <TextView
+            android:id="@+id/starship_detail_class"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_class_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_class_label"
+            tools:text="Escort ship" />
+
+        <TextView
+            android:id="@+id/starship_detail_manufacturer_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail_manufacturer"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starship_detail_class_label" />
+
+        <TextView
+            android:id="@+id/starship_detail_manufacturer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_manufacturer_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_manufacturer_label"
+            tools:text="Kuat Drive Yards" />
+
+        <TextView
+            android:id="@+id/starship_detail_speed_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail_speed"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starship_detail_manufacturer_label" />
+
+        <TextView
+            android:id="@+id/starship_detail_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_speed_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_speed_label"
+            tools:text="40" />
+
+        <TextView
+            android:id="@+id/starship_detail_length_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail_length"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starship_detail_speed_label" />
+
+        <TextView
+            android:id="@+id/starship_detail_length"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_length_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_length_label"
+            tools:text="300" />
+
+        <TextView
+            android:id="@+id/starship_detail_crew_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail_crew"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starship_detail_length_label" />
+
+        <TextView
+            android:id="@+id/starship_detail_crew"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_crew_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_crew_label"
+            tools:text="854" />
+
+        <TextView
+            android:id="@+id/starship_detail_passengers_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail_passengers"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starship_detail_crew_label" />
+
+        <TextView
+            android:id="@+id/starship_detail_passengers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_passengers_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_passengers_label"
+            tools:text="75" />
+
+        <TextView
+            android:id="@+id/starship_detail_capacity_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail_cargo"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starship_detail_passengers_label" />
+
+        <TextView
+            android:id="@+id/starship_detail_capacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="end"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_capacity_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starship_detail_capacity_label"
+            tools:text="6000000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

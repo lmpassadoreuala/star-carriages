@@ -10,7 +10,7 @@ class Starship(
     val model: String,
     val starshipClass: String,
     val manufacturer: String,
-    val lenghtInMeters: String,
+    val lengthInMeters: String,
     val crewSize: String,
     val passengersCapacity: String,
     val speed: String,

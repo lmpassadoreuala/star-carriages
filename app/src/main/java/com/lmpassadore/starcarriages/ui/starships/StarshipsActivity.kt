@@ -3,6 +3,7 @@ package com.lmpassadore.starcarriages.ui.starships
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,21 +26,33 @@ class StarshipsActivity : AppCompatActivity() {
     private val starshipsClient: StarshipsApi =
         RetrofitApiClient(BASE_URL).createService(StarshipsApi::class.java)
 
+    private lateinit var starshipsList: RecyclerView
     private lateinit var progressBar: ProgressBar
+    private lateinit var retryButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_starships)
 
         initControls()
+        setListeners()
+
         requestStarships()
     }
 
     private fun initControls() {
+        starshipsList = findViewById(R.id.starships_list)
         progressBar = findViewById(R.id.starships_loading)
+        retryButton = findViewById(R.id.starships_retry)
+    }
+
+    private fun setListeners() {
+        retryButton.setOnClickListener { requestStarships() }
     }
 
     private fun requestStarships() {
+
+        showProgress()
 
         starshipsClient.getStarships().enqueue(object : Callback<StarshipsResponse> {
 
@@ -48,24 +61,16 @@ class StarshipsActivity : AppCompatActivity() {
                 response: Response<StarshipsResponse>
             ) {
 
-                progressBar.visibility = View.GONE
-
                 if (response.isSuccessful) {
                     val starships = response.body()?.starships?.map { Starship(it) }
                     showStarshipList(starships)
                 } else
-                    Toast.makeText(
-                        this@StarshipsActivity,
-                        R.string.oops_error,
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    showError()
 
             }
 
             override fun onFailure(call: Call<StarshipsResponse>, t: Throwable) {
-                progressBar.visibility = View.GONE
-                Toast.makeText(this@StarshipsActivity, R.string.oops_error, Toast.LENGTH_SHORT)
-                    .show()
+                showError()
             }
 
         })
@@ -77,11 +82,30 @@ class StarshipsActivity : AppCompatActivity() {
         if (starships.isNullOrEmpty())
             return
 
-        val list: RecyclerView = findViewById(R.id.starships_list)
-        list.visibility = View.VISIBLE
+        starshipsList.visibility = View.VISIBLE
+        progressBar.visibility = View.GONE
+        retryButton.visibility = View.GONE
 
-        list.layoutManager = LinearLayoutManager(this)
-        list.adapter = StarshipAdapter(starships)
+        starshipsList.layoutManager = LinearLayoutManager(this)
+        starshipsList.adapter = StarshipAdapter(starships)
+
+    }
+
+    private fun showProgress() {
+
+        starshipsList.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
+        retryButton.visibility = View.GONE
+
+    }
+
+    private fun showError() {
+
+        Toast.makeText(this@StarshipsActivity, R.string.oops_error, Toast.LENGTH_SHORT).show()
+
+        starshipsList.visibility = View.GONE
+        progressBar.visibility = View.GONE
+        retryButton.visibility = View.VISIBLE
 
     }
 

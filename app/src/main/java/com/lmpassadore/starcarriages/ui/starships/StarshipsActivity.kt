@@ -1,5 +1,6 @@
 package com.lmpassadore.starcarriages.ui.starships
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,6 +14,7 @@ import com.lmpassadore.starcarriages.data.api.RetrofitApiClient
 import com.lmpassadore.starcarriages.data.api.StarshipsApi
 import com.lmpassadore.starcarriages.data.api.model.StarshipsResponse
 import com.lmpassadore.starcarriages.domain.entities.Starship
+import com.lmpassadore.starcarriages.ui.detail.StarshipDetailActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -86,8 +88,15 @@ class StarshipsActivity : AppCompatActivity() {
         progressBar.visibility = View.GONE
         retryButton.visibility = View.GONE
 
+        val adapter = StarshipAdapter(starships)
+        adapter.listener = object : StarshipAdapter.StarshipListListener {
+            override fun onItemClick(starship: Starship) {
+                goToStarshipDetail(starship)
+            }
+        }
+
         starshipsList.layoutManager = LinearLayoutManager(this)
-        starshipsList.adapter = StarshipAdapter(starships)
+        starshipsList.adapter = adapter
 
     }
 
@@ -107,6 +116,12 @@ class StarshipsActivity : AppCompatActivity() {
         progressBar.visibility = View.GONE
         retryButton.visibility = View.VISIBLE
 
+    }
+
+    private fun goToStarshipDetail(starship: Starship) {
+        val detailIntent = Intent(this, StarshipDetailActivity::class.java)
+        detailIntent.putExtra(StarshipDetailActivity.EXTRA_STARSHIP, starship)
+        startActivity(detailIntent)
     }
 
 }

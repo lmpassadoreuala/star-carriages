@@ -11,6 +11,12 @@ import com.lmpassadore.starcarriages.domain.entities.Starship
 class StarshipAdapter(val starships: List<Starship>) :
     RecyclerView.Adapter<StarshipAdapter.StarshipViewHolder>() {
 
+    interface StarshipListListener {
+        fun onItemClick(starship: Starship)
+    }
+
+    var listener: StarshipListListener? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StarshipViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.adapter_starship, parent, false)
@@ -23,6 +29,8 @@ class StarshipAdapter(val starships: List<Starship>) :
 
         holder.name.text = starship.name
         holder.model.text = starship.model
+
+        holder.itemView.setOnClickListener { listener?.onItemClick(starship) }
 
     }
 

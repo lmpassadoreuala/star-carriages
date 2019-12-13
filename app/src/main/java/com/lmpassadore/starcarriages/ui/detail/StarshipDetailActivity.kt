@@ -1,6 +1,7 @@
 package com.lmpassadore.starcarriages.ui.detail
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.lmpassadore.starcarriages.R
@@ -22,6 +23,16 @@ class StarshipDetailActivity : AppCompatActivity() {
 
         val starship: Starship = intent.extras?.getParcelable<Starship>(EXTRA_STARSHIP) as Starship
         initControls(starship)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun initControls(starship: Starship) {

@@ -10,10 +10,10 @@ class Starship(
     val model: String,
     val starshipClass: String,
     val manufacturer: String,
+    val speed: String,
     val lengthInMeters: String,
     val crewSize: String,
     val passengersCapacity: String,
-    val speed: String,
     val capacity: String
 ) : Parcelable {
 
@@ -22,10 +22,10 @@ class Starship(
         starshipResponse.model,
         starshipResponse.starshipClass,
         starshipResponse.manufacturer,
+        starshipResponse.mgltSpeed,
         starshipResponse.lengthInMeters,
         starshipResponse.crewSize,
         starshipResponse.passengersCapacity,
-        starshipResponse.mgltSpeed,
         starshipResponse.capacity
     )
 

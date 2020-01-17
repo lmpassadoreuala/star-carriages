@@ -64,7 +64,7 @@
             app:layout_constraintBaseline_toBaselineOf="@id/starship_detail_model_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/starship_detail_model_label"
-            tools:text="EF76 Nebulon-B escort frigae" />
+            tools:text="EF76 Nebulon-B escort frigate" />
 
         <TextView
             android:id="@+id/starship_detail_class_label"

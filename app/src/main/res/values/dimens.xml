@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Margins and padding -->
+
+        <!-- Starship Detail -->
+
+    <dimen name="padding_starship_adapter">16dp</dimen>
+    <dimen name="padding_starship_detail">16dp</dimen>
+    <dimen name="margin_starship_detail_label">16dp</dimen>
+
+    <!-- Text sizes -->
+
+    <dimen name="text_size_label">16sp</dimen>
+    <dimen name="text_size_info">14sp</dimen>
+
+</resources>
